@@ -1,0 +1,25 @@
+<html>
+    {% extends 'index.html' %}
+        {% block content %}
+        <br>
+        <p class="feedback-text">Feedback</p>
+        <form method = "post">
+            {% csrf_token %}
+            <table class ="ta_feed">
+                <tr height = "30px">
+                    <td>name :- </td><td> <input type = "text"  class = "f_inputbox" name = "fname"></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Email :- </td><td> <input type = "text" class = "f_inputbox" name = "fmail"></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Query/Feedback :- </td><td> <input type = "text" class = "f_inputbox" name = "feed"></td>
+                </tr>
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="f_btn" type = "submit"></td>
+                </tr>    
+            </table>
+        </form>
+        {% endblock %}
+    </html>

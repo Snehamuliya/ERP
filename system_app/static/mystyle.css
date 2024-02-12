@@ -1,0 +1,231 @@
+/* Signup styling started */
+
+.sign_data {
+  background-color: #eae8e8;
+  width: 520px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  font-size: 22px;
+  margin: auto;
+  color: rgb(59, 50, 149);
+}
+
+
+.s_inputbox{
+  height: 40px;
+  width: 270px;
+  text-align:left;
+  font-size: 17px;
+  border-radius: 24px;
+  color:rgb(85, 79, 79);
+  border-color: cornflowerblue;
+  margin:15px 20px;
+}
+
+.s_btn{
+height: 40px;
+width: 200px;
+font-size: 19px;
+margin-left: 40px;
+border-radius: 24px;
+border: none;
+color:white;
+background-color: cornflowerblue;
+}
+
+.sign-text{
+font-size: 40px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 780;
+text-align: center;
+color: rgb(48, 38, 112);
+}
+
+
+/* Signup styling end */
+
+
+/* Feedback styling start*/
+
+.ta_feed {
+    background-color: #eae8e8;
+    width: 520px;
+    text-align: center;
+    border: 3px solid #f1f1f1;
+    padding: 10px;
+    font-size: 22px;
+    margin: auto;
+    color: rgb(59, 50, 149);
+  }
+
+
+.f_inputbox{
+    height: 40px;
+    width: 270px;
+    text-align:left;
+    font-size: 17px;
+    border-radius: 24px;
+    color:rgb(85, 79, 79);
+    border-color: cornflowerblue;
+    margin:15px 20px;
+}
+
+.f_btn{
+  height: 40px;
+  width: 200px;
+  font-size: 19px;
+  margin-left: 40px;
+  border-radius: 24px;
+  border: none;
+  color:white;
+  background-color: cornflowerblue;
+}
+
+.feedback-text{
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 780;
+  text-align: center;
+  color: rgb(48, 38, 112);
+}
+
+/* Feedback styling end*/
+
+
+
+/* log styling start*/
+
+
+.log_tab {
+  background-color: #eae8e8;
+  width: 520px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  font-size: 22px;
+  margin: auto;
+  color: rgb(59, 50, 149);
+}
+
+
+.l_inputbox{
+  height: 40px;
+  width: 270px;
+  text-align:left;
+  font-size: 17px;
+  border-radius: 24px;
+  color:rgb(85, 79, 79);
+  border-color: cornflowerblue;
+  margin:15px 20px;
+}
+
+.l_btn{
+height: 40px;
+width: 200px;
+font-size: 19px;
+margin-left: 40px;
+border-radius: 24px;
+border: none;
+color:white;
+background-color: cornflowerblue;
+}
+
+.log_text{
+font-size: 40px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 780;
+text-align: center;
+color: rgb(48, 38, 112);
+}
+
+/* log styling end*/
+
+
+/* supplier styling start*/
+
+
+.su_tab{
+  background-color: #eae8e8;
+  width: 520px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  font-size: 22px;
+  margin: auto;
+  color: rgb(59, 50, 149);
+}
+
+
+.l_inputbox{
+  height: 40px;
+  width: 270px;
+  text-align:left;
+  font-size: 17px;
+  border-radius: 24px;
+  color:rgb(85, 79, 79);
+  border-color: cornflowerblue;
+  margin:15px 20px;
+}
+
+.s_btn{
+height: 40px;
+width: 200px;
+font-size: 19px;
+margin-left: 40px;
+border-radius: 24px;
+border: none;
+color:white;
+background-color: cornflowerblue;
+}
+
+.su_text{
+font-size: 40px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 780;
+text-align: center;
+color: rgb(48, 38, 112);
+}
+
+
+/* supplier styling end*/
+
+
+/* product styling start*/
+
+
+.p_text{
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 780;
+  text-align: center;
+  color: rgb(48, 38, 112);
+  }
+
+.all_product{
+  background-color: #eae8e8;
+  width: 85%;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  font-size: 22px;
+  margin: auto;
+  color: rgb(59, 50, 149);
+}
+
+.p_tab{
+  height: 40px;
+  width: 270px;
+  text-align:left;
+  font-size: 17px;
+  border-radius: 24px;
+  color:rgb(85, 79, 79);
+  border-color: cornflowerblue;
+  margin:15px 20px;
+}
+
+/* product styling end*/
+
+/* profile styling start*/
+/* profile styling end*/
+

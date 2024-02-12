@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            .sidenav {
+                height: 94%;
+                width: 160px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 30px;
+              }
+              
+              .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+              }
+              
+              .sidenav a:hover {
+                color: #f1f1f1;
+              }
+              
+              .main {
+                margin-left: 160px; /* Same as the width of the sidenav */
+                font-size: 18px; /* Increased text to enable scrolling */
+                padding: 0px 10px;
+              }
+              
+              @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+              }    
+        </style>
+    </head>
+    <body>
+      {% load static %}
+      <link rel ="stylesheet" href="{% static 'mystyle.css'%}">
+        <div class="sidenav">
+            <a href="/add_product">Product add</a>
+            {% if ad_user %}
+            <a href="/prod_all">All product</a>
+            <a href="/stock">Stock</a>
+            <a href="/cus_profile">User profile</a>
+            <a href="/supplier">Add Supplier</a>
+            <a href="/sup_profile">Supplier profile</a>
+            <a href="/ad_order">orders</a>
+            <a href="/all_feed">Feedback</a>
+            <a href="/ad_logout">logout</a>
+            {% comment %} <a href="/logout"><button type="button" class="btn btn-outline-danger" id="logout">Logout</button></a> {% endcomment %}
+            {% endif %}
+            <a></a>
+            <br><br><br>
+            <a></a>
+            <a></a>
+            <a></a>
+            {% if ad_user %}
+            <a href="" style="color:white;">Welcome {{ad_user}}</a>
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="main">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html> 

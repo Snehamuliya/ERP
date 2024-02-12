@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+
+.head{
+        background-color:#5DADE2;
+        color:white;
+        font-size:15px;
+        }
+        .data{
+        background-color:#D6EAF8;
+        font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+{% extends 'admin/a_index.html' %}
+
+{% block content %}
+<br>
+<h1 align="center" style="color:#2874A6;font-size:50px;">Supplier account</h1>
+<br>
+<form method = "post">
+  {% csrf_token %}
+  <table class ="sign_data">
+    <tr height = "30px">
+      <td>Name :- </td>
+        <td>
+          <select name="prod" class = "s_inputbox">
+            {% for supplier in result %}
+          <option value="{{supplier.supplier_user}}">{{supplier.supplier_user}}</option>
+          {% endfor %}
+        </select>
+ </td>
+ 
+      </tr>
+    <tr>
+      <td></td><td><input class="s_btn"  name="search" type = "submit" value="search"></td>
+    </tr>
+  </table>
+</form>
+<br>
+<div class="container-fluid">
+<table class="table table-bordered">
+  <tr align="center" class="head">
+  <th>Supplier's Name</th>
+  <th>Supplier's Address</th>
+  <th>Supplier's Email</th>
+  <th>Supplier's Mobile</th>
+  <th>Supplier's company name</th>
+  <th>Supplier's company address</th>
+  <th>Supplier's company mail</th>
+  <th>Supplier's company bank</th>
+  <th>Supplier's company a/c</th>
+  <th>Username</th>
+  <th>Supplier's Password</th>
+  <th>Action </th></tr>
+    {% for display in result %}
+  <tr class="data">
+      <td>{{display.supplier_name}}</td>
+      <td>{{display.supplier_address}}</td>
+      <td>{{display.supplier_mail}}</td>
+      <td>{{display.supplier_contact}}</td>
+      <td>{{display.supplier_comp_name}}</td>
+      <td>{{display.supplier_comp_address}}</td>
+      <td>{{display.supplier_comp_mail}}</td>
+      <td>{{display.supplier_comp_bank}}</td>     
+      <td>{{display.supplier_comp_acc}}</td>  
+      <td>{{display.supplier_user}}</td>
+      <td>{{display.supplier_password}}</td>
+      <td><form method="post" class="data">
+        {% csrf_token %}
+        <input type="text" value={{display.id}} name="en_del" hidden>
+        <input type="submit" value=" Delete" name="del" style="background-color:#E74C3C ;">
+    </form></td>
+    </tr>
+    {% endfor %}
+</table>
+    </div>
+<br><br><br><br><br>
+
+{% endblock %}
+
+</body>
+</html>

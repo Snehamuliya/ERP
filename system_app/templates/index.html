@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+            .sidenav {
+                height: 94%;
+                width: 160px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 30px;
+              }
+              
+              .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+              }
+              
+              .sidenav a:hover {
+                color: #f1f1f1;
+              }
+              
+              .main {
+                margin-left: 160px; /* Same as the width of the sidenav */
+                font-size: 18px; /* Increased text to enable scrolling */
+                padding: 0px 10px;
+              }
+              
+              @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+              }    
+        </style>
+    </head>
+    <body>
+      {% load static %}
+      <link rel ="stylesheet" href="{% static 'mystyle.css'%}">
+        <div class="sidenav">
+            <a href="/home">shop</a>
+            {% if s_user %}
+            <a href="/profile">profile</a>
+            <a href="/up_c_accout">update</a>
+            <a href="/m_order">orders</a>
+            <a href="/logout">logout</a>
+            {% comment %} <a href="/logout"><button type="button" class="btn btn-outline-danger" id="logout">Logout</button></a> {% endcomment %}
+            {% else %}
+            <a href="/sign">Signup</a>
+            <a href="/log">Login </a>
+            <a href="/admin">Admin login </a>
+            {% endif %}
+            <a href="/feed">feedback</a>
+            <a></a>
+            <br><br><br>
+            <a></a>
+            <a></a>
+            <a></a>
+            {% if s_user %}
+            <a href="" style="color:white;">Welcome {{s_user}}</a>
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="main">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html> 

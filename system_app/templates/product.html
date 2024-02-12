@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+
+.a_prod {
+  background-color: #eae8e8;
+  width: 84%;
+  height: 500px;
+  text-align: center;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  font-size: 22px;
+  margin: auto;
+  color: rgb(59, 50, 149);
+        }
+
+.pr_tab{
+  width:300px;
+  height:200px;
+  background-color: white;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 25px;
+}
+
+    </style>
+</head>
+<body>
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+<h1 align="center" style="color:#2874A6;font-size:50px;">Home </h1>
+<br><br>
+
+<div class = "a_prod">
+    {% for display in result %}
+    <div class = "pr_tab">
+    Product Name : {{display.product_name}}  <br>
+    Price : {{display.product_price}} <br>
+    Category : {{display.product_category}} <br>
+    Unit : {{display.product_unit}} <br>
+    Stock : {{display.product_stock}} <br>
+    <form method="post" class="data">
+      {% csrf_token %}
+      <input type="text" value={{display.id}} name="p_id" hidden>
+      <input type="submit" value=" Buy" name="buy" style="background-color:green ;">
+  </form>
+    </div>
+    {% endfor %}
+    
+
+</div>
+
+
+
+{% endblock %}
+
+</body>
+</html>

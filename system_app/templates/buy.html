@@ -1,0 +1,48 @@
+<html>
+    {% extends 'index.html' %}
+        {% block content %}
+
+   <br>
+        <p class="sign-text">Order</p>
+        <form method = "post">
+            {% csrf_token %}
+            <table class ="sign_data">
+                {% for display in result %}
+                <tr height = "30px">
+                    <td>Name :- </td><td> <input type = "text" value="{{display.customer_name}}" class = "s_inputbox" pattern="([a-zA-Z] ?)+[a-zA-Z]" name = "sname" ></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Address :- </td><td> <input type = "text" value="{{display.customer_address}}" class = "s_inputbox" name = "sadd" ></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Mobile no :- </td><td> <input type = "tel" value="{{display.customer_contact}}" class = "s_inputbox" pattern="[0-9]{10}" maxlength="10" name = "sno" ></td>     
+                </tr>
+                <tr height = "30px">
+                    <td> <input type = "text" value="{{display.customer_user}}" class = "s_inputbox" name = "user" hidden><br> </td>
+                </tr>                
+                {% endfor %}
+
+                {% for display in result1 %}
+                <td><input type="text" class = "s_inputbox" name="cid" value="{{display.id}}" hidden></td>
+                <tr height = "30px">
+                    <td>Name :- </td><td> <input type = "text" value="{{display.product_name}}" class = "s_inputbox" pattern="([a-zA-Z] ?)+[a-zA-Z]" name = "pname" ></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Price :- </td><td> <input type = "text" value="{{display.product_price}}" class = "s_inputbox" name = "price" ></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Quantity :- </td><td> <input type = "text" class = "s_inputbox" name = "qty" ></td>     
+                </tr>
+                <tr> <td></td><td>{{msg}}</td> </tr>
+                <tr height = "30px">
+                    <td> </td><td> <input type = "text" value="{{display.product_stock}}" class = "s_inputbox" name = "stock" hidden></td>     
+                </tr>
+                {% endfor %}                 
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="s_btn"  name="order" type = "submit"></td> 
+                </tr> 
+            </table>
+        </form>
+        {% endblock %}
+    </html>

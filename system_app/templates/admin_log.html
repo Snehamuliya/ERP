@@ -1,0 +1,22 @@
+<html>
+    {% extends 'index.html' %}
+        {% block content %}
+        <br>
+        <p class="log_text">Staff log in</p>
+        <form method = "post">
+            {% csrf_token %}
+            <table class ="log_tab">
+                <tr height = "30px">
+                    <td>name :- </td><td> <input type = "text"  class = "l_inputbox" name = "auser"></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Password :- </td><td> <input type = "text" class = "l_inputbox" name = "apass"></td>
+                </tr>
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="l_btn"  name="s_log" type = "submit"> <br>{{msg}}</td>
+                </tr>    
+            </table>
+        </form>
+        {% endblock %}
+    </html>

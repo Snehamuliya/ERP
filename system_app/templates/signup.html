@@ -1,0 +1,35 @@
+<html>
+    {% extends 'index.html' %}
+        {% block content %}
+        <br>
+        <p class="sign-text">Signup</p>
+        <form method = "post">
+            {% csrf_token %}
+            <table class ="sign_data">
+                <tr height = "30px">
+                    <td>Name :- </td><td> <input type = "text"  class = "s_inputbox" pattern="([a-zA-Z] ?)+[a-zA-Z]" name = "sname" required></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Address :- </td><td> <input type = "text" class = "s_inputbox" name = "sadd" required></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Mobile no :- </td><td> <input type = "tel"  class = "s_inputbox" pattern="[0-9]{10}" maxlength="10" name = "sno" required></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Email :- </td><td> <input type = "email" class = "s_inputbox" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name = "smail" required><br>{{e_msg}}</td>
+                </tr>
+                <tr height = "30px">
+                    <td>Username :- </td><td> <input type = "text" class = "s_inputbox" name = "user" required><br>{{msg}}</td>
+ 
+                </tr>
+                <tr height = "30px">
+                    <td>Password :- </td><td> <input type = "Password" class = "s_inputbox" name = "s_pass" required></td>
+                </tr>
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="s_btn" type = "submit"></td>
+                </tr>    
+            </table>
+        </form>
+        {% endblock %}
+    </html>

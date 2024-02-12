@@ -1,0 +1,35 @@
+<html>
+    {% extends 'admin/a_index.html' %}
+        {% block content %}
+        <br>
+        <p class="feedback-text">Add_product</p>
+        <form method = "post">
+            {% csrf_token %}
+            <table class ="ta_feed">
+                <tr height = "30px">
+                    <td>Product name :- </td><td> <input type = "text"  class = "f_inputbox" name = "pname"></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Price :- </td><td> <input type = "text" class = "f_inputbox" name = "cost"></td>
+                </tr>
+                <tr height = "30px"><td>Category :- </td>
+                    <td><select name="cat" class = "f_inputbox">
+                        <option value="mushroom">Mushroom</option>
+                        <option value="vegitable">Vegitable</option>
+                      </select></td>
+                    {% comment %} <td>Category :- </td><td> <input type = "text" class = "f_inputbox" name = "cat"></td> {% endcomment %}
+                </tr>
+                <tr height = "30px">
+                    <td>Unit :- </td><td> <input type = "text" class = "f_inputbox" name = "unit"></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Stock :- </td><td> <input type = "text" class = "f_inputbox" name = "stock"></td>
+                </tr>
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="f_btn" type = "submit">{{msg}}</td>
+                </tr>    
+            </table>
+        </form>
+        {% endblock %}
+    </html>

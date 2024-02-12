@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        body{
+    background-image: url("static/image/a_encrypt.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.head{
+        background-color:#5DADE2;
+        color:white;
+        font-size:15px;
+        }
+        .data{
+        background-color:#D6EAF8;
+        font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+{% extends 'admin/a_index.html' %}
+
+{% block content %}
+<br>
+<h1 align="center" style="color:#2874A6;font-size:50px;">Feedback</h1>
+<br>
+<div class="container-fluid">
+<table class="table table-bordered">
+  <tr align="center" class="head"><th>Name</th>
+  <th>Eamil</th>
+  <th>Feedback</th>
+</tr>
+    {% for display in result %}
+  <tr class="data">
+      <td>{{display.fullname}}</td>
+      <td>{{display.email}}</td>
+      <td>{{display.feedback}}</td></tr>
+    {% endfor %}
+</table>
+    </div>
+<br><br><br><br><br>
+
+{% endblock %}
+
+</body>
+</html>

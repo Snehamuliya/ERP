@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+    background-image: url("static/image/a_encrypt.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+        .head{
+        background-color:#5DADE2;
+        color:#2980B9;
+        font-size:15px;
+        }
+        .data{
+        background-color:#D6EAF8;
+        font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+<h1 align="center" style="color:#1F618D;font-size:35px;">Your order detail</h1>
+<br>
+<div class="container-fluid">
+<table class="table table-bordered">
+  <tr align="center"><th class="head">User name</th>
+  <th class="head">User address</th>
+  <th class="head">User mobile</th>
+  <th class="head">Product name</th>
+  <th class="head">Price</th>
+  <th class="head">Quantity</th>
+  <th class="head">Final</th></tr>
+  <tr>
+      <td class="data">{{c_name}}</td>
+      <td class="data">{{address}}</td>
+      <td class="data">{{contact}}</td>
+      <td class="data">{{p_name}}</td>
+      <td class="data">{{price}}</td>
+      <td class="data">{{qty}}</td>
+      <td class="data">{{final}}</td>
+      <td><form method = post >
+        {% csrf_token %}
+        <input type = "submit" name = "rec" value="print" onclick="window.print()">
+        <!--<button onclick="window.print()">Print this page</button> -->
+      </form></td></tr>
+</table>
+    </div>
+<br><br><br><br><br><br><br>
+<br><br><br><br>
+{% endblock %}
+
+</body>
+</html>

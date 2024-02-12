@@ -1,0 +1,50 @@
+<html>
+    {% extends 'admin/a_index.html' %}
+        {% block content %}
+        <br>
+        <p class="su_text">Supplier </p>
+        <form method = "post">
+
+            {% csrf_token %}
+            <table class ="su_tab">
+                <tr height = "30px">
+                    <td>Name :- </td><td> <input type = "text"  class = "l_inputbox" name = "su_name" pattern="([a-zA-Z] ?)+[a-zA-Z]" required><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Address :- </td><td> <input type = "text"  class = "l_inputbox" name = "su_add" ><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Mobile no :- </td><td> <input type = "tel" class = "l_inputbox" pattern="[0-9]{10}" maxlength="10" name = "su_no" required></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Email :- </td><td> <input type = "email" class = "l_inputbox" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name = "su_mail" required></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Company name :- </td><td> <input type = "text"  class = "l_inputbox" name = "co_name" pattern="([a-zA-Z] ?)+[a-zA-Z]" required><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td> Company Address :- </td><td> <input type = "text"  class = "l_inputbox" name = "co_add" ><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td> Company Email :- </td><td> <input type = "email" class = "l_inputbox" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name = "co_mail" required></td>
+                </tr>
+                <tr height = "30px">
+                    <td>Bank :- </td><td> <input type = "text"  class = "l_inputbox" name = "cb_name" pattern="([a-zA-Z] ?)+[a-zA-Z]" required><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>account no :- </td><td> <input type = "text"  class = "l_inputbox" pattern="[0-9]{10}" name = "a_no" required><br></td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Supplier username :- </td><td> <input type = "text"  class = "l_inputbox" name = "suser" required><br>{{msg}}</td>     
+                </tr>
+                <tr height = "30px">
+                    <td>Password :- </td><td> <input type = "Password" class = "l_inputbox" name = "spass" required></td>
+                </tr>
+                <tr height = "30px"></tr>
+                <tr>
+                    <td></td><td><input class="s_btn" type = "submit"></td>
+                </tr>    
+            </table>
+        </form>
+        {% endblock %}
+    </html>

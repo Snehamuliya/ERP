@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        body{
+    background-image: url("static/image/a_encrypt.jpg");
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.head{
+        background-color:#5DADE2;
+        color:white;
+        font-size:15px;
+        }
+        .data{
+        background-color:#D6EAF8;
+        font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+{% extends 'index.html' %}
+
+{% block content %}
+<br>
+<h1 align="center" style="color:#2874A6;font-size:50px;">Order</h1>
+<br>
+<div class="container-fluid">
+<table class="table table-bordered">
+  <tr align="center" class="head"><th>User's order</th>
+  <th>User's Address</th>
+  <th>Contact</th>
+  <th>Username</th>
+  <th>Product</th>
+  <th>Price</th>
+  <th>Quantity</th>
+  <th>Total</th>
+  <th>Date</th>
+  <th>Action</th></tr>
+    {% for display in result %}
+  <tr class="data">
+      <td>{{display.customer_name}}</td>
+      <td>{{display.customer_address}}</td>
+      <td>{{display.customer_mobile}}</td>
+      <td>{{display.user_name}}</td>
+      <td>{{display.product_name}}</td>
+      <td>{{display.product_price}}</td>
+      <td>{{display.product_Qty}}</td>
+      <td>{{display.order_total}}</td>
+      <td>{{display.order_date}}</td>
+      <td><form method="post" class="data">
+        {% csrf_token %}
+        <input type="text" value={{display.id}} name="en_del" hidden>
+        <input type = "text" value={{display.customer_name}} name="name" hidden>
+        <input type = "text" value={{display.customer_address}} name="add" hidden>
+        <input type = "text" value={{display.customer_mobile}} name="no" hidden>
+        <input type = "text" value={{display.user_name}} name="user" hidden>
+        <input type = "text" value={{display.product_name}} name="p_name" hidden>
+        <input type = "text" value={{display.product_price}} name="price" hidden>
+        <input type = "text" value={{display.product_Qty}} name="qty" hidden>
+        <input type = "text" value={{display.order_total}} name="total" hidden>
+        <input type = "text" value={{display.order_date}} name="o_date" hidden>       
+        <input type="submit" value=" Receipt" name="rec" style="background-color:#E74C3C ;">
+    </form></td></tr>
+    {% endfor %}
+</table>
+    </div>
+<br><br><br><br><br>
+
+{% endblock %}
+
+</body>
+</html>

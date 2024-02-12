@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'navbar.html' %}
+{% block content %}
+<h1>receipt</h1>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">bill id</th>
+      <th scope="col">name</th>
+      <th scope="col">address</th>
+      <th scope="col">mobile no</th>
+      <th scope="col">email</th>
+      <th scope="col">aadhar no</th>
+      <th scope="col">username</th>
+      <th scope="col">trip</th>
+      <th scope="col">query</th>
+      <th scope="col">trip price</th>
+      <th scope="col">total members</th>
+      <th scope="col">total amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{r_data.b_id}}</th>
+      <td>{{r_data.name}}</td>
+      <td>{{r_data.address}}</td>
+      <td>{{r_data.phone}}</td>
+      <td>{{r_data.mail_id}}</td>
+      <td>{{r_data.aadhar_no}}</td>
+      <td>{{r_data.username}}</td>
+      <td>{{r_data.trip}}</td>
+      <td>{{r_data.query}}</td>
+      <td>{{r_data.trip_price}}</td>
+      <td>{{r_data.no_of_member}}</td>
+      <td>{{r_data.amount}}</td>
+
+    </tr>
+  </tbody>
+</table>
+{{rec_id}}
+<form method = post >
+  {% csrf_token %}
+  <input type = "submit" name = "rec" value="print" onclick="window.print()">
+  <!--<button onclick="window.print()">Print this page</button> -->
+</form>
+
+{% include 'footer.html' %}
+
+{% endblock %}
+</body>
+</html>
